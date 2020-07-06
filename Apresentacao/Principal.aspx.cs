@@ -108,9 +108,12 @@ namespace Apresentacao
                 ViewState["IdCliente"] = value;
             }
         }
-            
         #endregion
-
-       
+        protected void grdClientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdClientes.PageIndex = e.NewPageIndex;
+            this.PopularGrid();
+        }
+        
     }
 }

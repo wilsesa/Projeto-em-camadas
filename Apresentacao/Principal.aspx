@@ -55,12 +55,15 @@
                     <br />
                     <asp:Button ID="btnVerCadastro" runat="server" Text="Ver cadastro" OnClick="btnVerCadastro_Click" />
                     <br />
-                    <asp:GridView ID="grdClientes" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowDataBound="grdClientes_RowDataBound">
+                    <asp:GridView ID="grdClientes" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" 
+                        OnRowDataBound="grdClientes_RowDataBound" PageSize="2" AllowPaging="true" OnPageIndexChanging="grdClientes_PageIndexChanging">
+                        <AlternatingRowStyle BackColor="#DCDCDC" />
                         <Columns>
                             <asp:BoundField DataField="Cliente" HeaderText="Cliente" />
                             <asp:BoundField DataField="Email" HeaderText="E-mail" />
                             <asp:BoundField DataField="Ativo" HeaderText="Status" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField DataField="DataCadastro" HeaderText="Data de Cadastro" DataFormatString="{0:dd/MM/yyyy}" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField DataField="TipoCliente" HeaderText="Nivel" />
                              <asp:TemplateField>
                                 <ItemTemplate>
                                     <asp:Button ID="btnEditar" runat="server" Text="Editar Cliente" OnClick="btnEditar_Click" 
@@ -75,8 +78,8 @@
                         </Columns>
                         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
                         <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
-                        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
-                        <RowStyle BackColor="White" ForeColor="#003399" />
+                        <PagerStyle BackColor="#000084" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                         <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
                         <SortedAscendingCellStyle BackColor="#EDF6F6" />
                         <SortedAscendingHeaderStyle BackColor="#0D4AC4" />

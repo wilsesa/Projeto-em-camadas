@@ -29,7 +29,28 @@ namespace Negocio
 
         public List<MLClientes> ListarClientes()
         {
-            return dadosClientes.listarClientes();
+            var listaRetorno = dadosClientes.listarClientes();
+            if (listaRetorno != null && listaRetorno.Count > 0)
+            {
+                foreach (var item in listaRetorno)
+                {
+                    TimeSpan ts = DateTime.Now - item.DataCadastro;
+                    int dias = ts.Days;
+                    if (dias > 30 && dias <= 179)
+                        item.TipoCliente = "Prata";
+                    else if (dias > 180 && dias <= 364)
+                        item.TipoCliente = "Ouro";
+                    else if (dias > 365)
+                        item.TipoCliente = "Platina";
+                    else
+                        item.TipoCliente = "Bronze";
+
+
+
+                }
+            }
+
+            return listaRetorno;
         }
     }
 }

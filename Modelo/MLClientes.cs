@@ -12,5 +12,8 @@ namespace Modelo
         public string Email { get; set; }
         public bool Ativo { get; set; }
         public DateTime DataCadastro { get; set; }
+
+        public string TipoCliente { get; set; }
+
     }
 }
